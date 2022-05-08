@@ -1,0 +1,32 @@
+if(!require(quantmod)) install.packages("quantmod")
+if(!require(forecast)) install.packages("forecast")
+if(!require(xlsx)) install.packages("xlsx")
+if(!require(tseries)) install.packages("tseries")
+if(!require(timeSeries)) install.packages("timeSeries")
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(fGarch)) install.packages("fGarch")
+if(!require(prophet)) install.packages("prophet")
+library(prophet)
+library(quantmod)
+library(forecast)
+library("xlsx")
+library(tseries)
+library(timeSeries)
+library(dplyr)
+library(fGarch)
+
+library(readxl)
+ARTO <- read_excel("D:/University/20211/Linear Regression and Time Series Models/Final Project/ARTO.JK Weekly 1 Year.xlsx")
+View(ARTO)
+frequency(ARTO)
+summary(ARTO)
+
+plot(ARTO)
+
+ARTO_Decompose=ts(ARTO,frequency=1)
+plot(ARTO_Decompose,xlab="Time",ylab="Price",main="ARTO PRICE",type="l")
+decompose(CO2)
+plot(decompose(CO2))
+plot(diff_CO2,xlab="Year",ylab="Kiloton of CO2 Equivalent",main="Indonesia's Greenhouse Gas Emission after Differencing",type="l")
+
+#3 check the staionarity
